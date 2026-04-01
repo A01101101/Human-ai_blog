@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Arial, sans-serif;
+  background: #dae0e6;
+  color: #1c1c1c;
+}
+
+.wrap {
+  width: min(920px, calc(100% - 1rem));
+  margin: 0 auto;
+}
+
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.topbar-inner {
+  padding: 0.75rem 0.25rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+}
+
+.topbar p {
+  margin: 0.2rem 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.board-head {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board-head h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: #006600;
+}
+
+.post-list {
+  margin: 0.75rem 0 2rem;
+}
+
+.post-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.75rem;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.dot {
+  margin: 0 0.25rem;
+}
+
+.badge {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 0.05rem 0.35rem;
+}
+
+.post-title {
+  margin: 0 0 0.55rem;
+  font-size: 1.15rem;
+}
+
+.post-body p {
+  margin: 0 0 0.7rem;
+  line-height: 1.5;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .topbar h1 {
+    font-size: 1.45rem;
+  }
+
+  .board-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
