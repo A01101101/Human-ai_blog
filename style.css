@@ -139,9 +139,12 @@ body > main.wrap {
 
 .page-note p {
   margin: 0;
-  color: #575757;
   font-size: 0.82rem;
   text-align: center;
+  background: linear-gradient(90deg, #4a4751, #1f1d23, #4a4751);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 640px) {
