@@ -11,19 +11,23 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="title-text">
-        <h1>DIILULU</h1>
-        <p>Ai blog... and other stuff</p>
+        <a href="index.html" class="title-link">
+          <div>
+            <h1>DIILULU</h1>
+            <p>Ai blog... and other stuff</p>
+          </div>
+        </a>
+        <nav class="tabs" aria-label="Blog sections">
+          <a class="tab-link" href="sidenotes.html">Side Notes</a>
+          <a class="tab-link active" href="aiwritten.html">Ai written</a>
+          <a class="tab-link" href="archive.html">Archive</a>
+        </nav>
       </div>
       <img class="title-gif" src="titlebar-loop.gif" alt="decorative cosmic animation">
     </div>
   </header>
 
   <main class="wrap">
-    <nav class="tabs" aria-label="Blog sections">
-      <a class="tab-link" href="index.html">Latest Posts</a>
-      <a class="tab-link" href="sidenotes.html">Side Notes</a>
-      <a class="tab-link active" href="aiwritten.html">Ai written</a>
-    </nav>
 
     <section class="post-list">
       <article class="post-card">
@@ -44,12 +48,65 @@
           </p>
 
           <h4>Option 1: Flourish Manuscript</h4>
+          <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 400px; margin: 1rem 0;">
+            <!-- Background -->
+            <rect width="400" height="150" fill="#f5f1e8"/>
+
+            <!-- Title -->
+            <text x="200" y="50" font-family="Georgia, serif" font-size="48" font-style="italic" font-weight="bold" text-anchor="middle" fill="#1a237e" letter-spacing="2">
+              DIILULU
+            </text>
+
+            <!-- Decorative swash under D -->
+            <path d="M 60 65 Q 70 75, 80 70" stroke="#b76e79" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+            <!-- Tagline -->
+            <text x="200" y="100" font-family="Georgia, serif" font-size="14" text-anchor="middle" fill="#2c3e50" font-style="italic">
+              AI blog... and other stuff
+            </text>
+
+            <!-- Color palette indicator -->
+            <circle cx="50" cy="130" r="8" fill="#1a237e"/>
+            <circle cx="75" cy="130" r="8" fill="#2c3e50"/>
+            <circle cx="100" cy="130" r="8" fill="#b76e79"/>
+            <circle cx="125" cy="130" r="8" fill="#f5f1e8" stroke="#ccc" stroke-width="1"/>
+          </svg>
           <p>
             Copperplate italic script with dramatic flourishes. Victorian elegance meets contemporary AI blog.
             Deep indigo and rose gold palette. Strong for literary audiences but risks looking dated.
           </p>
 
           <h4>Option 2: Geometric Brush Stroke (Recommended)</h4>
+          <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 400px; margin: 1rem 0;">
+            <!-- Background -->
+            <rect width="400" height="150" fill="#f5f5f5"/>
+
+            <!-- Geometric brush strokes forming D -->
+            <g stroke="#1a1a1a" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <!-- D: vertical line -->
+              <line x1="50" y1="25" x2="50" y2="100"/>
+              <!-- D: curved top -->
+              <path d="M 50 25 L 80 25 Q 90 40, 85 55 Q 80 60, 50 60"/>
+              <!-- D: curved bottom -->
+              <path d="M 50 60 L 80 60 Q 95 75, 85 95 Q 80 100, 50 100"/>
+            </g>
+
+            <!-- Remaining letters in geometric style -->
+            <text x="200" y="65" font-family="Arial, sans-serif" font-size="56" font-weight="900" text-anchor="middle" fill="#1a1a1a" letter-spacing="4" opacity="0.7">
+              IILULU
+            </text>
+
+            <!-- Tagline -->
+            <text x="200" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">
+              AI blog... and other stuff
+            </text>
+
+            <!-- Color palette indicator -->
+            <circle cx="50" cy="130" r="8" fill="#1a1a1a"/>
+            <circle cx="75" cy="130" r="8" fill="#004d4d"/>
+            <circle cx="100" cy="130" r="8" fill="#b8ff00"/>
+            <circle cx="125" cy="130" r="8" fill="#7c3aed"/>
+          </svg>
           <p>
             Modern brush calligraphy meets geometric precision. Thick angle cuts, broken letterforms with visible
             stroke layering. Matte black or teal with electric accents. This one wins: it visually represents
@@ -57,6 +114,41 @@
           </p>
 
           <h4>Option 3: Liquid Serif Hybrid</h4>
+          <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 400px; margin: 1rem 0;">
+            <defs>
+              <filter id="liquidBlur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
+              </filter>
+            </defs>
+            <!-- Background -->
+            <rect width="400" height="150" fill="#faf8f3"/>
+
+            <!-- Main text -->
+            <text x="200" y="55" font-family="Georgia, serif" font-size="54" font-weight="600" text-anchor="middle" fill="#1b4332" letter-spacing="3">
+              DIILULU
+            </text>
+
+            <!-- Liquid serifs (watercolor effect) -->
+            <g fill="#d4a574" opacity="0.6">
+              <ellipse cx="65" cy="60" rx="4" ry="8" filter="url(#liquidBlur)"/>
+              <ellipse cx="240" cy="60" rx="4" ry="8" filter="url(#liquidBlur)"/>
+              <ellipse cx="320" cy="60" rx="4" ry="8" filter="url(#liquidBlur)"/>
+            </g>
+
+            <!-- Tagline -->
+            <text x="200" y="105" font-family="Georgia, serif" font-size="14" text-anchor="middle" fill="#1b4332" font-style="italic">
+              AI blog... and other stuff
+            </text>
+
+            <!-- Baseline ink wash -->
+            <ellipse cx="200" cy="118" rx="150" ry="6" fill="#d4a574" opacity="0.2" filter="url(#liquidBlur)"/>
+
+            <!-- Color palette indicator -->
+            <circle cx="50" cy="130" r="8" fill="#1b4332"/>
+            <circle cx="75" cy="130" r="8" fill="#6a0572"/>
+            <circle cx="100" cy="130" r="8" fill="#d4a574"/>
+            <circle cx="125" cy="130" r="8" fill="#e8b4b8"/>
+          </svg>
           <p>
             Serif geometry with liquid, watercolor-style brushstroke terminals. Forest green or burgundy with
             soft gold accents. Refined but subtle—doesn't punch through crowded social feeds.

@@ -1,3 +1,12 @@
+/**
+ * DIILULU - Client-side JavaScript
+ * Features:
+ * - Relative time formatting (e.g., "2 days ago", "just now")
+ * - Automatic excerpt truncation to 150 characters
+ * - Real-time time updates every 60 seconds
+ */
+
+// Convert timestamp to relative time string (e.g., "2 days ago", "just now")
 function relativeFromNow(date) {
   const diffMs = Date.now() - date.getTime();
   const diffMin = Math.max(0, Math.floor(diffMs / 60000));
@@ -43,5 +52,15 @@ function updatePostTimes() {
   });
 }
 
+function truncateExcerpts() {
+  document.querySelectorAll(".post-excerpt").forEach((excerpt) => {
+    const text = excerpt.textContent.trim();
+    if (text.length > 150) {
+      excerpt.textContent = text.substring(0, 150).trim() + "...";
+    }
+  });
+}
+
 updatePostTimes();
+truncateExcerpts();
 setInterval(updatePostTimes, 60000);
