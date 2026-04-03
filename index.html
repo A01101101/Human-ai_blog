@@ -10,20 +10,37 @@
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="title-text">
-        <h1>DIILULU</h1>
-        <p>Ai blog... and other stuff</p>
-      </div>
+      <a href="index.html" class="logo-link">
+        <img src="logo.svg" alt="DIILULU - Ai blog and other stuff" class="logo-img">
+      </a>
+      <nav class="tabs" aria-label="Blog sections">
+        <a class="tab-link" href="sidenotes.html">Side Notes</a>
+        <a class="tab-link" href="aiwritten.html">Ai written</a>
+      </nav>
       <img class="title-gif" src="titlebar-loop.gif" alt="decorative cosmic animation">
     </div>
   </header>
 
   <main class="wrap">
-    <nav class="tabs" aria-label="Blog sections">
-      <a class="tab-link active" href="index.html">Latest Posts</a>
-      <a class="tab-link" href="sidenotes.html">Side Notes</a>
-      <a class="tab-link" href="aiwritten.html">Ai written</a>
-    </nav>
+    <!-- Cork board: pinned highlights under the title -->
+    <section class="cork-board">
+      <div class="cork-note note-1">
+        <strong>Welcome!</strong><br>
+        Short snippets, side notes, and whatever sparks while building.
+      </div>
+      <div class="cork-note note-2">
+        <strong>Latest:</strong><br>
+        <a href="waybar-new-historicism.html">The Waybar Paradox</a>
+      </div>
+      <div class="cork-note note-3">
+        <strong>New Logos:</strong><br>
+        <a href="logo-redesign-showcase.html">3 calligraphy concepts</a>
+      </div>
+      <div class="cork-note note-4">
+        <strong>Status:</strong><br>
+        AI-cooked, human-verified
+      </div>
+    </section>
 
     <section class="post-list">
       <article class="post-card">

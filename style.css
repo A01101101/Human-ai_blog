@@ -29,29 +29,25 @@ body > main.wrap {
 .topbar-inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   height: 72px;
   padding: 2px 0.25rem 0;
 }
 
-.title-text {
-  min-width: 0;
-  margin-top: -2px;
+.logo-link {
+  display: block;
+  flex-shrink: 0;
 }
 
-.topbar h1 {
-  margin: 0;
-  font-size: 3.45rem;
-  line-height: 0.88;
-  font-weight: 900;
-  letter-spacing: 0.02em;
+.logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
 }
 
-.topbar p {
-  margin: -0.12rem 0 0 1rem;
-  color: #666;
-  font-size: 0.78rem;
+.logo-link:hover .logo-img {
+  opacity: 0.75;
 }
 
 .title-gif {
@@ -70,9 +66,8 @@ body > main.wrap {
 
 .tabs {
   display: flex;
-  gap: 1rem;
-  margin-top: 0.9rem;
-  margin-left: 0.8rem;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .tab-link {
@@ -147,32 +142,95 @@ body > main.wrap {
   background-clip: text;
 }
 
+/* Cork board - pinned notes on home page */
+.cork-board {
+  background: #c4956a;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 70px);
+  border: 8px solid #6b3a1f;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.15);
+  padding: 1.5rem 1.2rem;
+  margin: 0.75rem 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+.cork-note {
+  background: #fefadc;
+  padding: 0.75rem 0.8rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #333;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.cork-note::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.note-1 { transform: rotate(-1.5deg); }
+.note-2 { transform: rotate(1deg); }
+.note-3 { transform: rotate(0.5deg); }
+.note-4 { transform: rotate(-0.8deg); }
+
+.note-1::before { background: #e74c3c; }
+.note-2::before { background: #3498db; }
+.note-3::before { background: #2ecc71; }
+.note-4::before { background: #f39c12; }
+
+.cork-note strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #1c1c1c;
+}
+
+.cork-note a {
+  color: #4a4751;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cork-note a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 640px) {
   .topbar-inner {
-    align-items: flex-start;
-    padding-top: 4px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 6px 0.25rem;
+    gap: 0.5rem;
   }
 
-  .topbar h1 {
-    font-size: 2.35rem;
-    line-height: 0.95;
-  }
-
-  .topbar p {
-    margin-left: 0.7rem;
-    font-size: 0.72rem;
+  .logo-img {
+    height: 45px;
   }
 
   .title-gif {
     width: 120px;
-    height: 62px;
-  }
-
-  .latest-title {
-    margin-top: 0.7rem;
+    height: 50px;
   }
 
   .tabs {
     gap: 0.75rem;
+    order: 3;
+    width: 100%;
+  }
+
+  .cork-board {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 }
