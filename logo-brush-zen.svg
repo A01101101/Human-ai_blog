@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150">
+  <defs>
+    <linearGradient id="ink3" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d0d"/>
+      <stop offset="100%" style="stop-color:#2a2a35"/>
+    </linearGradient>
+    <filter id="bleed3" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="tex3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gn"/>
+      <feBlend in="SourceGraphic" in2="gn" mode="multiply"/>
+    </filter>
+    <filter id="pap3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feBlend in="SourceGraphic" in2="g" mode="soft-light"/>
+    </filter>
+  </defs>
+
+  <!-- Warm parchment background -->
+  <rect width="460" height="150" fill="#f0ebe0" filter="url(#pap3)" rx="2"/>
+
+  <!-- Single enso-inspired brush circle - subtle, behind text -->
+  <circle cx="230" cy="62" r="52" fill="none" stroke="#1a1a2e" stroke-width="3.5" opacity="0.06"
+          stroke-dasharray="280 50" stroke-linecap="round" transform="rotate(-20 230 62)"/>
+
+  <!-- Brush letters - heavy sumi ink style, pure black -->
+  <g filter="url(#bleed3)">
+    <!-- D - thick confident strokes -->
+    <path d="M 48,20 Q 45,23 44,36 L 42,78 Q 41,92 44,98 L 48,100 Q 51,100 52,95 L 54,44 Q 54,28 50,22 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+    <path d="M 50,24 Q 55,18 65,16 Q 82,14 90,28 Q 98,44 96,62 Q 93,82 82,93 Q 70,102 52,100
+             L 55,96 Q 68,97 78,87 Q 88,76 90,60 Q 92,44 84,34 Q 76,22 64,25 Q 56,27 52,32 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+
+    <!-- I - bold, slightly tilted -->
+    <path d="M 108,18 Q 112,14 114,18 L 116,28 Q 117,42 116,62 L 114,86 Q 112,96 110,100 Q 107,102 106,98 L 104,86 Q 103,72 104,52 L 106,32 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+    <ellipse cx="111" cy="8" rx="5" ry="4" fill="url(#ink3)" opacity="0.9"/>
+
+    <!-- I -->
+    <path d="M 130,20 Q 134,16 136,20 L 137,32 Q 138,46 137,64 L 136,86 Q 135,96 133,100 Q 130,102 129,98 L 128,84 Q 127,70 128,52 L 129,34 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+    <ellipse cx="133" cy="10" rx="4.5" ry="3.5" fill="url(#ink3)" opacity="0.85"/>
+
+    <!-- L -->
+    <path d="M 152,18 Q 155,14 157,18 L 158,38 Q 159,56 158,74 L 157,92 Q 156,98 155,100
+             L 156,103 Q 158,105 168,104 L 182,101 Q 186,100 185,103 Q 180,106 168,107 L 153,108
+             Q 148,108 147,103 L 148,86 Q 147,62 148,40 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+
+    <!-- U -->
+    <path d="M 196,20 Q 199,16 201,20 L 202,38 Q 203,52 202,66 L 200,82 Q 198,96 205,103 Q 213,108 222,102
+             Q 228,94 229,80 L 230,62 Q 231,48 230,36 L 229,26 Q 230,22 232,24 L 233,38 Q 234,52 233,68
+             L 232,84 Q 230,102 222,108 Q 212,113 204,108 Q 194,102 193,84 L 194,62 Q 195,44 196,28 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+
+    <!-- L -->
+    <path d="M 248,18 Q 251,14 253,18 L 254,40 Q 254,58 253,76 L 252,92 Q 251,98 250,100
+             L 251,103 Q 253,105 263,104 L 278,101 Q 282,100 281,103 Q 276,106 265,107 L 250,108
+             Q 245,108 244,103 L 244,86 Q 243,62 244,40 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+
+    <!-- U -->
+    <path d="M 294,20 Q 297,16 299,20 L 300,40 Q 301,54 300,68 L 298,84 Q 296,98 303,104 Q 311,108 320,103
+             Q 326,95 327,82 L 328,64 Q 329,50 328,38 L 327,28 Q 328,24 330,26 L 331,40 Q 332,54 331,70
+             L 330,86 Q 328,104 320,110 Q 310,115 302,110 Q 292,104 291,86 L 292,64 Q 293,46 294,28 Z"
+          fill="url(#ink3)" filter="url(#tex3)"/>
+  </g>
+
+  <!-- Single horizontal brush stroke underneath - like a ground line -->
+  <path d="M 35,112 Q 80,110 160,111 Q 240,112 340,110 Q 380,109 420,111"
+        fill="none" stroke="#0d0d0d" stroke-width="2.5" opacity="0.08" stroke-linecap="round"
+        filter="url(#bleed3)"/>
+
+  <!-- Tagline - minimal -->
+  <text x="230" y="136" text-anchor="middle" font-family="Georgia, serif" font-size="9"
+        fill="#6b6560" letter-spacing="4" opacity="0.5">Ai blog... and other stuff</text>
+</svg>

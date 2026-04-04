@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+  <defs>
+    <!-- Neon cyan gradient -->
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00F5D4"/>
+      <stop offset="50%" style="stop-color:#00BBF9"/>
+      <stop offset="100%" style="stop-color:#9B5DE5"/>
+    </linearGradient>
+    <!-- Hot magenta -->
+    <linearGradient id="hotPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F72585"/>
+      <stop offset="100%" style="stop-color:#B5179E"/>
+    </linearGradient>
+    <!-- Dark base for outlines -->
+    <linearGradient id="darkBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E"/>
+      <stop offset="100%" style="stop-color:#0F0F1A"/>
+    </linearGradient>
+    <!-- Neon glow filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur1"/>
+      <feGaussianBlur stdDeviation="6" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Chrome/metallic effect -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8"/>
+      <stop offset="25%" style="stop-color:#A0A0A0"/>
+      <stop offset="50%" style="stop-color:#E0E0E0"/>
+      <stop offset="75%" style="stop-color:#808080"/>
+      <stop offset="100%" style="stop-color:#C0C0C0"/>
+    </linearGradient>
+    <!-- Drip filter -->
+    <filter id="roughEdge">
+      <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
+    </filter>
+    <!-- Spray paint texture -->
+    <filter id="sprayPaint" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
+      <feComponentTransfer in="gray" result="cutoff">
+        <feFuncA type="discrete" tableValues="0 0 0 0 0 1 1 1"/>
+      </feComponentTransfer>
+      <feComposite in="SourceGraphic" in2="cutoff" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- Background - dark urban wall -->
+  <rect width="500" height="200" fill="#0A0A12" rx="4"/>
+
+  <!-- Subtle brick/wall texture lines -->
+  <g stroke="#1a1a2e" stroke-width="0.3" opacity="0.3">
+    <line x1="0" y1="50" x2="500" y2="50"/>
+    <line x1="0" y1="100" x2="500" y2="100"/>
+    <line x1="0" y1="150" x2="500" y2="150"/>
+    <line x1="80" y1="0" x2="80" y2="50"/>
+    <line x1="200" y1="0" x2="200" y2="50"/>
+    <line x1="320" y1="0" x2="320" y2="50"/>
+    <line x1="440" y1="0" x2="440" y2="50"/>
+    <line x1="40" y1="50" x2="40" y2="100"/>
+    <line x1="160" y1="50" x2="160" y2="100"/>
+    <line x1="280" y1="50" x2="280" y2="100"/>
+    <line x1="400" y1="50" x2="400" y2="100"/>
+    <line x1="80" y1="100" x2="80" y2="150"/>
+    <line x1="200" y1="100" x2="200" y2="150"/>
+    <line x1="320" y1="100" x2="320" y2="150"/>
+    <line x1="440" y1="100" x2="440" y2="150"/>
+  </g>
+
+  <!-- Background drip stain -->
+  <path d="M 420,20 L 418,45 Q 417,55 418,60 L 419,62" fill="none" stroke="#F72585" stroke-width="2" opacity="0.08"/>
+  <path d="M 75,15 L 74,35 Q 73,40 74,42" fill="none" stroke="#00F5D4" stroke-width="1.5" opacity="0.06"/>
+
+  <!-- Shadow/3D layer of letters (offset behind) -->
+  <g transform="translate(3, 3)" opacity="0.4">
+    <!-- D shadow -->
+    <path d="M 42,42 L 50,32 L 58,32 L 72,42 L 72,88 L 58,98 L 50,98 L 42,92 Z
+             M 52,46 L 52,86 L 62,86 L 62,46 Z"
+          fill="#1a1a2e" fill-rule="evenodd"/>
+    <!-- I shadow -->
+    <path d="M 82,32 L 102,32 L 102,42 L 96,42 L 96,88 L 102,88 L 102,98 L 82,98 L 82,88 L 88,88 L 88,42 L 82,42 Z"
+          fill="#1a1a2e"/>
+    <!-- I shadow 2 -->
+    <path d="M 112,32 L 132,32 L 132,42 L 126,42 L 126,88 L 132,88 L 132,98 L 112,98 L 112,88 L 118,88 L 118,42 L 112,42 Z"
+          fill="#1a1a2e"/>
+    <!-- L shadow -->
+    <path d="M 142,32 L 152,32 L 152,86 L 172,86 L 172,98 L 142,98 Z" fill="#1a1a2e"/>
+    <!-- U shadow -->
+    <path d="M 182,32 L 192,32 L 192,82 Q 192,92 202,92 Q 212,92 212,82 L 212,32 L 222,32 L 222,82 Q 222,102 202,102 Q 182,102 182,82 Z"
+          fill="#1a1a2e"/>
+    <!-- L shadow 2 -->
+    <path d="M 232,32 L 242,32 L 242,86 L 262,86 L 262,98 L 232,98 Z" fill="#1a1a2e"/>
+    <!-- U shadow 2 -->
+    <path d="M 272,32 L 282,32 L 282,82 Q 282,92 292,92 Q 302,92 302,82 L 302,32 L 312,32 L 312,82 Q 312,102 292,102 Q 272,102 272,82 Z"
+          fill="#1a1a2e"/>
+  </g>
+
+  <!-- Main letter outlines - angular graffiti style -->
+  <g filter="url(#roughEdge)">
+    <!-- D - blocky with angular cuts -->
+    <path d="M 40,40 L 48,28 L 60,28 L 74,40 L 74,86 L 60,100 L 48,100 L 40,92 Z
+             M 52,44 L 52,84 L 62,84 L 62,44 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5" fill-rule="evenodd"/>
+    <!-- D inner glow highlight -->
+    <path d="M 44,38 L 50,32 L 56,32" fill="none" stroke="#00F5D4" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- I (first) - angular block -->
+    <path d="M 80,28 L 104,28 L 104,40 L 96,40 L 96,86 L 104,86 L 104,100 L 80,100 L 80,86 L 88,86 L 88,40 L 80,40 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+
+    <!-- I (second) - slight tilt for dynamism -->
+    <path d="M 110,28 L 134,28 L 134,40 L 126,40 L 126,86 L 134,86 L 134,100 L 110,100 L 110,86 L 118,86 L 118,40 L 110,40 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+
+    <!-- L (first) - with sharp serifs -->
+    <path d="M 140,28 L 152,28 L 152,84 L 174,84 L 174,100 L 140,100 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+    <!-- Angular cut on L -->
+    <path d="M 166,84 L 174,76 L 174,84 Z" fill="url(#neonCyan)" opacity="0.3"/>
+
+    <!-- U (first) -->
+    <path d="M 180,28 L 192,28 L 192,80 Q 192,92 204,92 Q 216,92 216,80 L 216,28 L 228,28 L 228,80
+             Q 228,106 204,106 Q 180,106 180,80 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+
+    <!-- L (second) -->
+    <path d="M 234,28 L 246,28 L 246,84 L 268,84 L 268,100 L 234,100 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+    <path d="M 260,84 L 268,76 L 268,84 Z" fill="url(#neonCyan)" opacity="0.3"/>
+
+    <!-- U (second) - final letter -->
+    <path d="M 274,28 L 286,28 L 286,80 Q 286,92 298,92 Q 310,92 310,80 L 310,28 L 322,28 L 322,80
+             Q 322,106 298,106 Q 274,106 274,80 Z"
+          fill="url(#darkBase)" stroke="url(#neonCyan)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Hot pink accent slashes across letters -->
+  <g opacity="0.7">
+    <!-- Diagonal slash 1 -->
+    <path d="M 55,35 L 68,65 L 65,67 L 52,37 Z" fill="url(#hotPink)" opacity="0.4"/>
+    <!-- Diagonal slash 2 -->
+    <path d="M 145,30 L 160,62 L 157,64 L 142,32 Z" fill="url(#hotPink)" opacity="0.35"/>
+    <!-- Horizontal speed line -->
+    <line x1="35" y1="60" x2="330" y2="60" stroke="url(#hotPink)" stroke-width="0.8" opacity="0.2"/>
+    <line x1="45" y1="75" x2="325" y2="75" stroke="url(#hotPink)" stroke-width="0.5" opacity="0.15"/>
+  </g>
+
+  <!-- Paint drips from letters -->
+  <g fill="url(#neonCyan)" opacity="0.5">
+    <!-- Drip from D -->
+    <path d="M 48,100 Q 47,108 48,118 Q 48,125 47,130 Q 47,134 48,132 Q 49,128 48,118 Q 48,108 49,102"/>
+    <!-- Drip from first L -->
+    <path d="M 168,100 Q 167,110 168,122 Q 168,128 167,132 Q 167,135 168,133 Q 169,128 168,120"/>
+    <!-- Drip from first U -->
+    <path d="M 204,106 Q 203,114 204,124 Q 204,130 203,135 Q 203,138 204,136 Q 205,130 204,122"/>
+    <!-- Drip from second U -->
+    <path d="M 298,106 Q 297,115 298,126 Q 299,134 298,140 Q 297,144 298,142 Q 300,136 299,125"/>
+  </g>
+
+  <!-- Neon glow version of the outline (behind, blurred) -->
+  <g filter="url(#neonGlow)" opacity="0.15">
+    <rect x="38" y="26" width="288" height="82" rx="4" fill="none" stroke="#00F5D4" stroke-width="2"/>
+  </g>
+
+  <!-- Circuit/tech pattern accent - right side -->
+  <g stroke="#9B5DE5" stroke-width="0.8" opacity="0.4">
+    <line x1="345" y1="35" x2="345" y2="55"/>
+    <line x1="345" y1="55" x2="365" y2="55"/>
+    <line x1="365" y1="55" x2="365" y2="45"/>
+    <circle cx="365" cy="42" r="2" fill="none"/>
+    <line x1="365" y1="55" x2="365" y2="75"/>
+    <line x1="365" y1="75" x2="385" y2="75"/>
+    <circle cx="388" cy="75" r="2" fill="none"/>
+    <line x1="345" y1="35" x2="375" y2="35"/>
+    <line x1="375" y1="35" x2="375" y2="25"/>
+    <circle cx="375" cy="22" r="2" fill="none"/>
+    <!-- More nodes -->
+    <line x1="385" y1="75" x2="385" y2="95"/>
+    <line x1="385" y1="95" x2="405" y2="95"/>
+    <circle cx="408" cy="95" r="2" fill="none"/>
+    <line x1="345" y1="35" x2="335" y2="25"/>
+    <circle cx="333" cy="23" r="2" fill="none"/>
+  </g>
+
+  <!-- "AI" badge/tag -->
+  <g transform="translate(355, 48)">
+    <rect x="0" y="0" width="45" height="22" rx="3" fill="url(#hotPink)" opacity="0.85"/>
+    <rect x="0" y="0" width="45" height="22" rx="3" fill="none" stroke="#F72585" stroke-width="0.5"/>
+    <text x="22.5" y="15.5" text-anchor="middle" font-family="'Courier New', monospace" font-size="12"
+          fill="white" font-weight="bold" letter-spacing="2">AI</text>
+  </g>
+
+  <!-- Geometric accent shapes -->
+  <polygon points="420,30 430,25 430,35" fill="url(#neonCyan)" opacity="0.3"/>
+  <polygon points="440,85 450,78 450,92" fill="url(#hotPink)" opacity="0.25"/>
+  <rect x="415" y="88" width="8" height="8" fill="none" stroke="url(#neonCyan)" stroke-width="0.8" opacity="0.3" transform="rotate(45 419 92)"/>
+
+  <!-- Spray paint dots scattered -->
+  <g opacity="0.2">
+    <circle cx="35" cy="25" r="1" fill="#00F5D4"/>
+    <circle cx="38" cy="22" r="0.5" fill="#00F5D4"/>
+    <circle cx="330" cy="30" r="0.8" fill="#F72585"/>
+    <circle cx="335" cy="105" r="1.2" fill="#9B5DE5"/>
+    <circle cx="338" cy="108" r="0.6" fill="#9B5DE5"/>
+    <circle cx="42" cy="108" r="0.7" fill="#00BBF9"/>
+    <circle cx="325" cy="25" r="0.6" fill="#00F5D4"/>
+    <circle cx="175" cy="20" r="0.5" fill="#F72585"/>
+    <circle cx="250" cy="15" r="0.8" fill="#9B5DE5"/>
+  </g>
+
+  <!-- Horizontal rule/divider -->
+  <line x1="50" y1="142" x2="320" y2="142" stroke="url(#neonCyan)" stroke-width="0.5" opacity="0.3"/>
+  <line x1="50" y1="143.5" x2="320" y2="143.5" stroke="url(#hotPink)" stroke-width="0.3" opacity="0.2"/>
+
+  <!-- Tagline -->
+  <text x="185" y="162" text-anchor="middle" font-family="'Courier New', 'Lucida Console', monospace" font-size="10"
+        fill="#7B7B8E" letter-spacing="3" opacity="0.7">Ai blog... and other stuff</text>
+
+  <!-- Small glitch lines near tagline -->
+  <line x1="60" y1="160" x2="72" y2="160" stroke="#00F5D4" stroke-width="0.5" opacity="0.25"/>
+  <line x1="298" y1="158" x2="315" y2="158" stroke="#F72585" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Bottom corner accent -->
+  <path d="M 460,175 L 475,165 L 490,175 L 475,185 Z" fill="none" stroke="url(#neonCyan)" stroke-width="0.6" opacity="0.25"/>
+  <circle cx="475" cy="175" r="2" fill="url(#neonCyan)" opacity="0.2"/>
+</svg>

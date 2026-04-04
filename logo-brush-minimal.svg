@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150">
+  <defs>
+    <linearGradient id="ink1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <filter id="bleed1" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="tex1">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gn"/>
+      <feBlend in="SourceGraphic" in2="gn" mode="multiply"/>
+    </filter>
+    <filter id="pap1">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feBlend in="SourceGraphic" in2="g" mode="soft-light"/>
+    </filter>
+  </defs>
+
+  <!-- Clean rice paper -->
+  <rect width="460" height="150" fill="#f7f3ec" filter="url(#pap1)" rx="3"/>
+
+  <!-- Letters only - clean brush strokes, no stamp, no clutter -->
+  <g filter="url(#bleed1)">
+    <!-- D -->
+    <path d="M 42,30 Q 40,32 39,42 L 37,82 Q 36,92 38,96 L 40,98 Q 42,99 43,96 L 45,50 Q 45,37 43,32 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+    <path d="M 43,34 Q 45,30 52,28 Q 68,25 75,37 Q 82,50 80,65 Q 78,82 68,92 Q 58,99 45,98 Q 42,98 41,96
+             L 43,94 Q 55,95 64,86 Q 73,76 75,62 Q 77,48 70,40 Q 63,30 52,32 Q 47,33 44,36 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+
+    <!-- I -->
+    <path d="M 92,28 Q 94,26 96,28 L 97,34 Q 98,42 97,58 L 96,84 Q 95,92 93,96 Q 91,98 90,96 L 89,90 Q 88,82 89,58 L 90,37 Q 90,30 92,28 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+    <ellipse cx="93" cy="20" rx="3.5" ry="3" fill="url(#ink1)" opacity="0.9"/>
+
+    <!-- I -->
+    <path d="M 112,30 Q 114,27 116,29 L 117,37 Q 118,47 117,63 L 116,86 Q 115,94 113,97 Q 111,99 110,96 L 109,86 Q 108,74 109,55 L 110,37 Q 111,31 112,30 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+    <ellipse cx="113" cy="20" rx="3" ry="3.5" fill="url(#ink1)" opacity="0.85" transform="rotate(-8 113 20)"/>
+
+    <!-- L -->
+    <path d="M 132,28 Q 134,25 136,28 L 137,42 Q 138,55 137,72 L 136,90 Q 135,96 134,98
+             L 134,100 Q 133,102 135,102 L 145,101 Q 155,100 162,98 Q 165,97 164,99 Q 160,102 150,103 L 135,104
+             Q 130,104 129,101 L 130,90 Q 129,68 130,47 L 131,32 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+
+    <!-- U -->
+    <path d="M 172,30 Q 174,27 175,30 L 176,42 Q 177,55 176,68 L 174,82 Q 172,94 178,100 Q 184,104 192,100
+             Q 198,94 199,82 L 200,65 Q 201,52 200,40 L 199,32 Q 200,28 202,30 L 203,40 Q 204,52 203,68
+             L 202,84 Q 200,98 192,104 Q 184,108 176,104 Q 168,98 167,84 L 168,62 Q 169,45 170,34 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+
+    <!-- L -->
+    <path d="M 218,28 Q 220,25 222,28 L 223,47 Q 223,62 222,78 L 221,92 Q 220,98 219,100
+             L 220,102 Q 222,103 230,102 L 245,100 Q 250,99 252,98 Q 254,97 253,100 Q 248,103 238,104
+             L 222,105 Q 217,105 216,101 L 216,88 Q 215,65 216,42 L 217,32 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+
+    <!-- U -->
+    <path d="M 262,30 Q 264,27 265,30 L 266,45 Q 267,58 266,72 L 264,86 Q 262,98 269,104 Q 276,108 284,103
+             Q 290,96 291,84 L 292,66 Q 293,52 292,40 L 291,32 Q 292,28 294,30 L 295,42 Q 296,55 295,70
+             L 294,86 Q 292,102 284,108 Q 275,112 266,108 Q 258,102 257,86 L 258,65 Q 259,48 260,34 Z"
+          fill="url(#ink1)" filter="url(#tex1)"/>
+
+    <!-- Trailing brush flick -->
+    <path d="M 295,32 Q 298,28 302,26 Q 308,23 315,22"
+          fill="none" stroke="url(#ink1)" stroke-width="1.2" opacity="0.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Single thin divider line -->
+  <path d="M 60,115 Q 150,113 230,114 Q 310,115 400,113"
+        fill="none" stroke="#1a1a2e" stroke-width="0.5" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- Tagline -->
+  <text x="230" y="132" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10"
+        fill="#7a7068" letter-spacing="2.5" opacity="0.6">Ai blog... and other stuff</text>
+</svg>

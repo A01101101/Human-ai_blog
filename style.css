@@ -82,7 +82,7 @@ body > main.wrap {
 
 .tab-link.active {
   color: #1f1d23;
-  border-bottom-color: #1f1d23;
+  border-bottom-color: #00F5D4; /* neonCyan from logo */
 }
 
 .post-list {
@@ -111,10 +111,14 @@ body > main.wrap {
 }
 
 .badge {
-  background: #f0f0f0;
-  border: 1px solid #ddd;
+  background: #F72585; /* hotPink from logo */
+  color: white;
+  border: 1px solid #B5179E;
   border-radius: 2px;
   padding: 0.05rem 0.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 .post-title {

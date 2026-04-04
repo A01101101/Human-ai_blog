@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+  <defs>
+    <!-- Elegant gold gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B6914"/>
+      <stop offset="30%" style="stop-color:#C5943A"/>
+      <stop offset="50%" style="stop-color:#E8C872"/>
+      <stop offset="70%" style="stop-color:#C5943A"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+    <!-- Deep script color -->
+    <linearGradient id="scriptGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B1B3A"/>
+      <stop offset="50%" style="stop-color:#2D1B4E"/>
+      <stop offset="100%" style="stop-color:#1B1B3A"/>
+    </linearGradient>
+    <!-- Rose accent -->
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C77DBA"/>
+      <stop offset="100%" style="stop-color:#8B4A7D"/>
+    </linearGradient>
+    <!-- Subtle shadow -->
+    <filter id="textShadow">
+      <feDropShadow dx="1" dy="1.5" stdDeviation="1" flood-color="#1B1B3A" flood-opacity="0.2"/>
+    </filter>
+    <!-- Sheen effect -->
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0"/>
+      <stop offset="45%" style="stop-color:white;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:white;stop-opacity:0.15"/>
+      <stop offset="55%" style="stop-color:white;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+    </linearGradient>
+    <!-- Elegant blur for decorative elements -->
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Background - deep charcoal -->
+  <rect width="500" height="200" fill="#0D0D14" rx="6"/>
+
+  <!-- Subtle vignette overlay -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:0.15"/>
+    <stop offset="100%" style="stop-color:#000000;stop-opacity:0.4"/>
+  </radialGradient>
+  <rect width="500" height="200" fill="url(#vignette)" rx="6"/>
+
+  <!-- Decorative background flourish - left -->
+  <path d="M 20,100 Q 30,60 50,80 Q 60,90 55,100 Q 50,110 40,105 Q 25,95 20,100 Z"
+        fill="none" stroke="url(#roseGrad)" stroke-width="0.4" opacity="0.2"/>
+  <path d="M 20,100 Q 15,85 25,70 Q 35,55 30,45"
+        fill="none" stroke="url(#roseGrad)" stroke-width="0.3" opacity="0.15"/>
+
+  <!-- Decorative background flourish - right -->
+  <path d="M 480,100 Q 470,60 450,80 Q 440,90 445,100 Q 450,110 460,105 Q 475,95 480,100 Z"
+        fill="none" stroke="url(#roseGrad)" stroke-width="0.4" opacity="0.2"/>
+  <path d="M 480,100 Q 485,85 475,70 Q 465,55 470,45"
+        fill="none" stroke="url(#roseGrad)" stroke-width="0.3" opacity="0.15"/>
+
+  <!-- Main script lettering - "DIILULU" -->
+  <g filter="url(#textShadow)">
+    <!-- Leading flourish swash before D -->
+    <path d="M 30,75 Q 35,68 42,65 Q 50,62 55,65 Q 58,67 56,70"
+          fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- D - elegant copperplate-style -->
+    <path d="M 58,55 Q 56,52 58,48 Q 62,42 68,40 Q 78,36 88,40 Q 98,44 102,56 Q 106,68 102,82
+             Q 98,96 88,104 Q 78,112 68,110 Q 60,108 57,100 L 55,88 Q 54,75 56,62 L 58,55 Z
+             M 62,52 Q 60,56 59,68 L 58,85 Q 58,98 62,104 Q 66,108 72,108 Q 82,106 88,98
+             Q 94,88 96,76 Q 98,62 94,52 Q 88,42 78,42 Q 68,42 64,48 Z"
+          fill="url(#scriptGrad)" fill-rule="evenodd"/>
+    <!-- D inline highlight -->
+    <path d="M 65,50 Q 63,56 62,70 L 61,85 Q 62,96 66,102"
+          fill="none" stroke="url(#goldGrad)" stroke-width="0.6" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- Connector D to i -->
+    <path d="M 68,110 Q 75,114 85,112 Q 95,110 105,105"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- i (first) - flowing script -->
+    <path d="M 105,105 Q 108,100 110,88 L 112,72 Q 113,62 116,55
+             Q 118,50 120,55 L 118,72 Q 117,85 115,98 Q 114,108 116,112
+             Q 118,114 122,112"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- i dot - diamond -->
+    <path d="M 114,42 L 117,38 L 120,42 L 117,46 Z" fill="url(#goldGrad)"/>
+
+    <!-- i (second) - connected -->
+    <path d="M 122,112 Q 128,106 130,95 L 132,78 Q 133,65 136,58
+             Q 138,53 140,58 L 138,75 Q 137,90 135,102 Q 134,112 137,115
+             Q 139,117 143,114"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- i dot -->
+    <path d="M 134,44 L 137,40 L 140,44 L 137,48 Z" fill="url(#goldGrad)"/>
+
+    <!-- L (first) - dramatic descender -->
+    <path d="M 143,114 Q 148,108 152,90 L 155,70 Q 157,55 160,45
+             Q 162,38 164,42 L 162,60 Q 160,78 158,95 L 157,108
+             Q 156,118 160,122 Q 165,126 175,124 Q 185,120 195,115"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.8" stroke-linecap="round"/>
+    <!-- L cross flourish -->
+    <path d="M 157,108 Q 162,112 170,116 Q 180,120 190,118"
+          fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- U - sweeping curve -->
+    <path d="M 195,115 Q 200,105 205,85 L 208,68 Q 210,55 213,48
+             Q 215,44 217,48 L 215,65 Q 213,82 210,98
+             Q 207,112 212,120 Q 218,126 228,122 Q 238,116 242,105
+             L 245,90 Q 247,78 248,65 Q 249,55 252,50
+             Q 254,46 255,50 L 254,65"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.8" stroke-linecap="round"/>
+
+    <!-- Connector -->
+    <path d="M 254,65 Q 253,80 252,95 Q 251,108 254,114 Q 258,118 265,115"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- L (second) -->
+    <path d="M 265,115 Q 270,108 275,88 L 278,68 Q 280,52 283,44
+             Q 285,38 287,42 L 285,62 Q 283,80 281,98 L 280,112
+             Q 279,122 284,126 Q 290,130 302,126 Q 315,120 322,112"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.8" stroke-linecap="round"/>
+
+    <!-- U (final) - with trailing flourish -->
+    <path d="M 322,112 Q 328,100 332,82 L 335,65 Q 337,52 340,45
+             Q 342,40 344,44 L 342,62 Q 340,80 337,96
+             Q 334,112 340,120 Q 348,128 360,122 Q 370,114 374,100
+             L 377,82 Q 379,68 380,55 Q 381,48 384,44
+             Q 386,40 387,45 L 386,60 Q 385,75 383,90"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="3.8" stroke-linecap="round"/>
+
+    <!-- Trailing flourish after U -->
+    <path d="M 383,90 Q 385,100 390,108 Q 396,118 410,120
+             Q 425,122 440,115 Q 450,110 458,100 Q 462,94 468,92
+             Q 472,91 470,94 Q 465,100 455,110 Q 442,122 425,128
+             Q 408,132 395,128 Q 385,124 383,115"
+          fill="none" stroke="url(#scriptGrad)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Extra flourish loop -->
+    <path d="M 440,115 Q 448,108 452,98 Q 454,92 450,90 Q 445,92 442,98 Q 440,105 442,112"
+          fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Sheen overlay on letters -->
+  <rect x="50" y="35" width="400" height="100" fill="url(#sheen)" rx="4"/>
+
+  <!-- Gold decorative line -->
+  <path d="M 90,145 Q 150,142 250,143 Q 350,144 410,142"
+        fill="none" stroke="url(#goldGrad)" stroke-width="0.6" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Small diamond accents on the line -->
+  <path d="M 85,143 L 88,140 L 91,143 L 88,146 Z" fill="url(#goldGrad)" opacity="0.6"/>
+  <path d="M 409,143 L 412,140 L 415,143 L 412,146 Z" fill="url(#goldGrad)" opacity="0.6"/>
+
+  <!-- Tagline -->
+  <text x="250" y="163" text-anchor="middle" font-family="Georgia, 'Palatino Linotype', serif" font-size="10.5"
+        fill="#8B7D6B" letter-spacing="4" opacity="0.7">Ai blog... and other stuff</text>
+
+  <!-- Thin bottom accent -->
+  <path d="M 160,178 Q 200,176 250,177 Q 300,178 340,176"
+        fill="none" stroke="url(#goldGrad)" stroke-width="0.3" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Tiny star accents -->
+  <g fill="url(#goldGrad)" opacity="0.3">
+    <circle cx="130" cy="38" r="0.8"/>
+    <circle cx="250" cy="32" r="0.6"/>
+    <circle cx="370" cy="40" r="0.7"/>
+    <circle cx="200" cy="135" r="0.5"/>
+    <circle cx="300" cy="136" r="0.5"/>
+  </g>
+</svg>

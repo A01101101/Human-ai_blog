@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+  <defs>
+    <!-- Ink gradient -->
+    <linearGradient id="inkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <!-- Red seal gradient -->
+    <radialGradient id="sealGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e63946"/>
+      <stop offset="100%" style="stop-color:#9b2226"/>
+    </radialGradient>
+    <!-- Ink bleed filter -->
+    <filter id="inkBleed" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- Ink texture filter -->
+    <filter id="inkTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply"/>
+    </filter>
+    <!-- Soft glow -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Paper texture background -->
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feBlend in="SourceGraphic" in2="gray" mode="soft-light"/>
+    </filter>
+  </defs>
+
+  <!-- Background - rice paper feel -->
+  <rect width="500" height="200" fill="#f5f0e8" filter="url(#paper)" rx="4"/>
+
+  <!-- Subtle border frame like a scroll -->
+  <rect x="8" y="8" width="484" height="184" fill="none" stroke="#c9b99a" stroke-width="0.5" rx="2"/>
+  <rect x="12" y="12" width="476" height="176" fill="none" stroke="#c9b99a" stroke-width="0.3" rx="1"/>
+
+  <!-- Ink splatter accents - background -->
+  <circle cx="45" cy="35" r="3" fill="#1a1a2e" opacity="0.15"/>
+  <circle cx="48" cy="38" r="1.5" fill="#1a1a2e" opacity="0.1"/>
+  <circle cx="455" cy="130" r="2" fill="#1a1a2e" opacity="0.12"/>
+  <circle cx="460" cy="125" r="4" fill="#1a1a2e" opacity="0.08"/>
+  <circle cx="120" cy="155" r="1.8" fill="#1a1a2e" opacity="0.1"/>
+
+  <!-- D - Bold vertical stroke with dramatic thick-thin -->
+  <g filter="url(#inkBleed)">
+    <!-- D vertical stroke - starts thin, gets thick, thins at bottom -->
+    <path d="M 52,38 Q 50,40 49,50 L 47,95 Q 46,105 48,110 L 50,112 Q 52,113 53,110 L 55,60 Q 55,45 53,40 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+    <!-- D curve - sweeping brush arc -->
+    <path d="M 53,42 Q 55,38 62,36 Q 78,33 85,45 Q 92,58 90,75 Q 88,95 78,105 Q 68,113 55,112 Q 52,112 51,110
+             L 53,108 Q 65,109 74,100 Q 83,90 85,75 Q 87,58 80,48 Q 73,38 62,40 Q 57,41 54,44 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+
+    <!-- First I - single bold stroke -->
+    <path d="M 102,36 Q 104,34 106,36 L 108,42 Q 109,50 108,70 L 107,100 Q 106,108 104,112 Q 102,114 101,112 L 100,105 Q 99,95 100,70 L 101,45 Q 101,38 102,36 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+    <!-- I dot - heavy ink blob -->
+    <ellipse cx="104" cy="28" rx="4" ry="3.5" fill="url(#inkGrad)" opacity="0.9"/>
+
+    <!-- Second I - slightly different stroke character -->
+    <path d="M 122,38 Q 124,35 126,37 L 127,45 Q 128,55 127,75 L 126,100 Q 125,110 123,113 Q 121,115 120,112 L 119,100 Q 118,85 119,65 L 120,45 Q 121,39 122,38 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+    <!-- I dot -->
+    <ellipse cx="123" cy="28" rx="3.5" ry="4" fill="url(#inkGrad)" opacity="0.85" transform="rotate(-10 123 28)"/>
+
+    <!-- L - vertical with dramatic horizontal foot -->
+    <path d="M 142,36 Q 144,33 146,36 L 147,50 Q 148,65 147,85 L 146,105 Q 145,110 144,112
+             L 144,114 Q 143,116 145,116 L 155,115 Q 165,114 172,112 Q 175,111 174,113 Q 170,116 160,117 L 145,118
+             Q 140,118 139,115 L 140,105 Q 139,80 140,55 L 141,40 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+
+    <!-- U - sweeping brush curve -->
+    <path d="M 182,38 Q 184,35 185,38 L 186,50 Q 187,65 186,80 L 184,95 Q 182,108 188,114 Q 194,118 202,114
+             Q 208,108 209,95 L 210,75 Q 211,60 210,45 L 209,38 Q 210,35 212,37 L 213,45 Q 214,60 213,80
+             L 212,98 Q 210,112 202,118 Q 194,122 186,118 Q 178,112 177,98 L 178,75 Q 179,55 180,42 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+
+    <!-- L - second L with unique stroke -->
+    <path d="M 228,36 Q 230,33 232,36 L 233,55 Q 233,75 232,90 L 231,105 Q 230,112 229,114
+             L 230,116 Q 232,117 240,116 L 255,114 Q 260,113 262,112 Q 264,111 263,114 Q 258,117 248,118
+             L 232,119 Q 227,119 226,115 L 226,100 Q 225,75 226,50 L 227,40 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+
+    <!-- U - final character with trailing brush stroke -->
+    <path d="M 272,38 Q 274,35 275,38 L 276,55 Q 277,70 276,85 L 274,100 Q 272,112 279,118 Q 286,122 294,117
+             Q 300,110 301,97 L 302,78 Q 303,62 302,48 L 301,40 Q 302,36 304,38 L 305,50 Q 306,65 305,82
+             L 304,100 Q 302,116 294,122 Q 285,127 276,122 Q 268,116 267,100 L 268,78 Q 269,58 270,42 Z"
+          fill="url(#inkGrad)" filter="url(#inkTexture)"/>
+    <!-- Trailing brush flick from final U -->
+    <path d="M 305,40 Q 308,36 312,34 Q 318,31 325,30 Q 330,29 328,31 Q 322,33 316,36 Q 310,39 307,42"
+          fill="none" stroke="url(#inkGrad)" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Red seal/chop stamp -->
+  <g transform="translate(365, 30)" filter="url(#inkBleed)">
+    <rect x="0" y="0" width="52" height="52" rx="3" fill="url(#sealGrad)" opacity="0.85"/>
+    <!-- Seal border -->
+    <rect x="3" y="3" width="46" height="46" rx="2" fill="none" stroke="#f5f0e8" stroke-width="1.5" opacity="0.6"/>
+    <!-- AI characters inside seal - stylized -->
+    <path d="M 14,15 L 22,38 L 30,15" fill="none" stroke="#f5f0e8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <line x1="16" y1="28" x2="28" y2="28" stroke="#f5f0e8" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+    <line x1="38" y1="14" x2="38" y2="39" stroke="#f5f0e8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="38" cy="10" r="1.5" fill="#f5f0e8" opacity="0.9"/>
+  </g>
+
+  <!-- Ink drip from seal -->
+  <path d="M 390,82 Q 391,88 390,96 Q 389,102 390,105" fill="none" stroke="#9b2226" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="390" cy="107" r="1.2" fill="#9b2226" opacity="0.25"/>
+
+  <!-- Decorative ink splatters -->
+  <g opacity="0.15" fill="#1a1a2e">
+    <circle cx="330" cy="95" r="1.2"/>
+    <circle cx="335" cy="90" r="0.8"/>
+    <circle cx="95" cy="120" r="1.5"/>
+    <circle cx="250" cy="30" r="0.9"/>
+    <circle cx="320" cy="110" r="0.6"/>
+    <!-- Ink spray dots -->
+    <circle cx="310" cy="42" r="0.5"/>
+    <circle cx="315" cy="45" r="0.7"/>
+    <circle cx="308" cy="48" r="0.4"/>
+    <circle cx="50" cy="120" r="0.6"/>
+    <circle cx="55" cy="118" r="0.4"/>
+  </g>
+
+  <!-- Horizontal brush stroke divider -->
+  <path d="M 50,135 Q 80,133 150,134 Q 220,136 300,134 Q 380,132 440,135"
+        fill="none" stroke="#1a1a2e" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Tagline - subtle brush style -->
+  <text x="250" y="158" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11"
+        fill="#5c5147" letter-spacing="3" opacity="0.7">Ai blog... and other stuff</text>
+
+  <!-- Small decorative dots flanking tagline -->
+  <circle cx="148" cy="155" r="1.5" fill="#c9b99a" opacity="0.5"/>
+  <circle cx="352" cy="155" r="1.5" fill="#c9b99a" opacity="0.5"/>
+
+  <!-- Bottom accent stroke -->
+  <path d="M 180,172 Q 220,170 250,171 Q 280,172 320,170"
+        fill="none" stroke="#c9b99a" stroke-width="0.5" opacity="0.4" stroke-linecap="round"/>
+</svg>
