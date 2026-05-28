@@ -38,6 +38,30 @@ body > main.wrap {
 .logo-link {
   display: block;
   flex-shrink: 0;
+  position: relative;
+}
+
+.logo-link::after {
+  content: "back to mainpage";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a4751;
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  transition-delay: 2s;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.logo-link:hover::after {
+  opacity: 1;
 }
 
 .logo-img {
