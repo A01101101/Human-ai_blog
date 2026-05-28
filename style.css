@@ -208,6 +208,20 @@ body > main.wrap {
   font-family: 'Comic Sans MS', 'Segoe Print', cursive;
 }
 
+.cork-note-img {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cork-note-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 2px 3px 6px rgba(0,0,0,0.2);
+}
+
+
 /* Pushpin */
 .cork-note::before {
   content: '';
