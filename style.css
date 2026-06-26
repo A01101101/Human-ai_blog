@@ -74,15 +74,6 @@ body > main.wrap {
   opacity: 0.75;
 }
 
-.title-gif {
-  width: min(240px, 38vw);
-  height: 64px;
-  object-fit: contain;
-  border: 0;
-  border-radius: 0;
-  display: block;
-}
-
 .latest-title {
   margin: 0.65rem 0 0.45rem;
   font-size: 1.1rem;
@@ -174,109 +165,6 @@ body > main.wrap {
   background-clip: text;
 }
 
-/* Cork board - pinned notes on home page */
-.cork-board {
-  background: #c4956a url('cork-texture.jpg') center / cover;
-  border-image: url('wood-frame.jpg') 12 stretch;
-  border-width: 10px;
-  border-style: solid;
-  border-radius: 2px;
-  box-shadow:
-    inset 0 3px 12px rgba(0,0,0,0.3),
-    inset 0 -3px 8px rgba(0,0,0,0.15),
-    0 4px 12px rgba(0,0,0,0.25),
-    0 1px 3px rgba(0,0,0,0.1);
-  padding: 1.5rem 1.2rem;
-  margin: 0.75rem 0 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  position: relative;
-}
-
-.cork-note {
-  background: linear-gradient(135deg, #fefadc 0%, #f8f3c8 40%, #fefadc 100%);
-  padding: 0.85rem 0.9rem;
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: #333;
-  box-shadow:
-    2px 3px 6px rgba(0,0,0,0.2),
-    0 1px 2px rgba(0,0,0,0.1),
-    inset 0 -1px 0 rgba(0,0,0,0.04);
-  position: relative;
-  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
-}
-
-.cork-note-img {
-  background: none;
-  padding: 0;
-  box-shadow: none;
-}
-
-.cork-note-img img {
-  display: block;
-  width: 100%;
-  height: auto;
-  box-shadow: 2px 3px 6px rgba(0,0,0,0.2);
-}
-
-
-/* Pushpin */
-.cork-note::before {
-  content: '';
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  box-shadow:
-    0 2px 3px rgba(0,0,0,0.35),
-    inset 0 -2px 3px rgba(0,0,0,0.2),
-    inset 0 2px 2px rgba(255,255,255,0.4);
-}
-
-/* Pin point shadow on the note */
-.cork-note::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.15);
-}
-
-.note-1 { transform: rotate(-1.5deg); }
-.note-2 { transform: rotate(1deg); }
-.note-3 { transform: rotate(0.5deg); }
-.note-4 { transform: rotate(-0.8deg); }
-
-.note-1::before { background: #e74c3c; }
-.note-2::before { background: #3498db; }
-.note-3::before { background: #2ecc71; }
-.note-4::before { background: #f39c12; }
-
-.cork-note strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: #1c1c1c;
-}
-
-.cork-note a {
-  color: #4a4751;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.cork-note a:hover {
-  text-decoration: underline;
-}
-
 /* Tablet */
 @media (max-width: 768px) {
   .topbar-inner {
@@ -290,23 +178,12 @@ body > main.wrap {
     order: 1;
   }
 
-  .title-gif {
-    order: 2;
-    width: 140px;
-    height: 55px;
-  }
-
   .tabs {
     order: 3;
     width: 100%;
     gap: 1rem;
     padding: 0.4rem 0 0;
     border-top: 1px solid #e5e5e5;
-  }
-
-  .cork-board {
-    padding: 1.2rem 1rem;
-    gap: 0.8rem;
   }
 }
 
@@ -325,11 +202,6 @@ body > main.wrap {
     height: 40px;
   }
 
-  .title-gif {
-    width: 100px;
-    height: 42px;
-  }
-
   .tabs {
     gap: 0.6rem;
     justify-content: center;
@@ -338,18 +210,6 @@ body > main.wrap {
   .tab-link {
     font-size: 0.88rem;
     padding: 0.4rem 0.3rem;
-  }
-
-  .cork-board {
-    grid-template-columns: 1fr;
-    padding: 0.8rem 0.7rem;
-    border-width: 5px;
-    margin: 0.5rem 0 1rem;
-  }
-
-  .cork-note {
-    font-size: 0.82rem;
-    padding: 0.65rem 0.7rem;
   }
 
   .post-card {
